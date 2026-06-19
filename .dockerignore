@@ -1,0 +1,41 @@
+# ==============================================================================
+# .dockerignore — Root level
+# Files listed here are excluded from ALL Docker build contexts
+# ==============================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Node / Frontend
+node_modules/
+frontend/dist/
+frontend/build/
+frontend/.cache/
+
+# Environment / Secrets
+.env
+.env.local
+.env.*.local
+
+# Version Control
+.git/
+.gitignore
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docs / CI
+README.md
+*.md
+.github/
+
+# OS
+.DS_Store
+Thumbs.db

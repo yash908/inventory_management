@@ -1,0 +1,32 @@
+# Production-Ready .gitignore
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Environment Variables (NEVER COMMIT)
+.env
+.env.local
+.env.*.local
+
+# Docker
+*.log
+
+# Node.js / Frontend
+node_modules/
+frontend/dist/
+frontend/build/
+
+# OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
