@@ -153,3 +153,28 @@ docker push <dockerhub-username>/inventrack-backend:latest
 
 ---
 
+## ☁️ Deployment
+
+### Database — PostgreSQL on Render
+1. Go to [Render](https://render.com) and click **New** -> **PostgreSQL**.
+2. Name your database, set standard username/password, and select your hosting region.
+3. Select the free tier and click **Create Database**.
+4. Once provisioned, copy the **Internal Database URL** (or External Database URL if connecting outside Render).
+
+### Backend — Render
+1. Push your code to GitHub.
+2. Create a new **Web Service** on [Render](https://render.com).
+3. Connect your repository, set the **Root Directory** to `backend/`.
+4. Set the **Start Command** to `uvicorn app.main:app --host 0.0.0.0 --port 8000`.
+5. Add the following environment variables:
+   - `DATABASE_URL` = (Paste your copied Render PostgreSQL URL)
+   - `CORS_ORIGINS` = (Paste your deployed Vercel URL, e.g. `https://your-frontend.vercel.app`)
+6. Deploy! *(FastAPI's startup metadata hook will automatically initialize your database tables on Render PostgreSQL).*
+
+### Frontend — Vercel
+1. Create a new project on [Vercel](https://vercel.com) and import your repository.
+2. Set the **Root Directory** to `frontend/`.
+3. Add the environment variable:
+   - `VITE_API_URL` = (Paste your deployed Render backend web service URL)
+4. Deploy!
+
