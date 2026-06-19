@@ -153,16 +153,3 @@ docker push <dockerhub-username>/inventrack-backend:latest
 
 ---
 
-## ☁️ Deployment
-
-### Backend — Render
-1. Push your code to GitHub
-2. Create a new **Web Service** on [Render](https://render.com)
-3. Connect your repo, set root directory to `backend/`
-4. Set environment variables (`DATABASE_URL`, `CORS_ORIGINS`)
-
-### Frontend — Vercel
-1. Create a new project on [Vercel](https://vercel.com)
-2. Set root directory to `frontend/`
-3. Set `VITE_API_URL` to your Render backend URL
-4. Deploy!
